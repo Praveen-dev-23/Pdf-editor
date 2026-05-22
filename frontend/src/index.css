@@ -1,0 +1,120 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Share+Tech+Mono&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --color-neon-cyan: #38bdf8;       /* vibrant sky blue */
+  --color-neon-pink: #ff3366;       /* vibrant hot pink */
+  --color-neon-purple: #facc15;     /* bright yellow */
+  --color-neon-green: #22c55e;      /* vibrant emerald green */
+  --color-cyber-dark: #faf9f5;      /* warm cream bg */
+  --color-cyber-card: #ffffff;      /* white card bg */
+  --color-cyber-panel: #ffffff;     /* white panel bg */
+  --color-cyber-border: #000000;
+  
+  --font-orbitron: "Outfit", sans-serif;
+  --font-mono: "Share Tech Mono", monospace;
+  --font-sans: "Outfit", sans-serif;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-cyber-dark);
+    font-family: "Outfit", sans-serif;
+    color: #000000;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Custom Scrollbar for Neobrutalist theme */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #faf9f5;
+    border-left: 2px solid #000000;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #000000;
+    border: 2px solid #faf9f5;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #38bdf8;
+  }
+}
+
+/* Custom Neobrutalist Dot Grid Utility */
+.bg-cyber-grid {
+  background-size: 24px 24px;
+  background-image: 
+    radial-gradient(circle, rgba(0, 0, 0, 0.08) 1.5px, transparent 1.5px);
+}
+
+/* scanline disabled for Neobrutalist */
+.scanline::before {
+  display: none !important;
+}
+
+/* Brutalist flat offset black shadows */
+.brutal-shadow-cyan,
+.brutal-shadow-pink,
+.brutal-shadow-green,
+.brutal-shadow-purple,
+.brutal-shadow-black {
+  box-shadow: 4px 4px 0px 0px #000000;
+  border: 2px solid #000000;
+  transition: all 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.brutal-shadow-cyan:hover:not(:disabled),
+.brutal-shadow-pink:hover:not(:disabled),
+.brutal-shadow-green:hover:not(:disabled),
+.brutal-shadow-purple:hover:not(:disabled),
+.brutal-shadow-black:hover:not(:disabled) {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px 0px #000000;
+}
+
+.brutal-shadow-cyan:active:not(:disabled),
+.brutal-shadow-pink:active:not(:disabled),
+.brutal-shadow-green:active:not(:disabled),
+.brutal-shadow-purple:active:not(:disabled),
+.brutal-shadow-black:active:not(:disabled) {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px 0px #000000;
+}
+
+/* Monospace small labels */
+.terminal-tag {
+  font-family: "Share Tech Mono", monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* Neobrutalist panel base */
+.glass-panel {
+  background: #ffffff;
+  border: 2px solid #000000;
+  box-shadow: 4px 4px 0px 0px #000000;
+}
+
+/* Glow effects disabled for Neobrutalist */
+.glow-cyan,
+.glow-pink,
+.glow-green,
+.glow-purple {
+  text-shadow: none !important;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
