@@ -94,14 +94,14 @@ export default function OcrExtractor() {
           {files.length > 0 && (
             <button
               onClick={handleOcr}
-              className="w-full flex items-center justify-center gap-2 px-6 py-3 border-2 border-black bg-black text-white text-sm font-sans font-black tracking-wider hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[4px_4px_0px_0px_#facc15] active:translate-x-[2px] active:translate-y-[2px] transition-all cursor-pointer shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
+              className="w-full flex items-center justify-center gap-2 px-6 py-3 border-2 border-black bg-black text-white text-sm font-sans font-black tracking-wider hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[4px_4px_0px_0px_var(--color-neon-purple)] active:translate-x-[2px] active:translate-y-[2px] transition-all cursor-pointer shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
             >
               <span>EXTRACT TEXT</span>
             </button>
           )}
 
           {error && (
-            <div className="border-2 border-black bg-[#ff3366] text-black p-3 font-mono text-xs font-bold rounded-xs shadow-[2px_2px_0px_0px_#000] animate-[fadeIn_0.2s_ease-out]">
+            <div className="border-2 border-black bg-neon-pink text-black p-3 font-mono text-xs font-bold rounded-xs shadow-[2px_2px_0px_0px_#000] animate-[fadeIn_0.2s_ease-out]">
               [CRITICAL ERROR]: {error}
             </div>
           )}
@@ -122,7 +122,7 @@ export default function OcrExtractor() {
                 <button
                   onClick={handleCopy}
                   title="Copy to Clipboard"
-                  className="p-2 border-2 border-black bg-[#faf7f2] text-black hover:bg-[#facc15] hover:shadow-[2px_2px_0px_0px_#000] transition-all rounded-sm cursor-pointer shadow-[1px_1px_0px_0px_rgba(0,0,0,1)]"
+                  className="p-2 border-2 border-black bg-[#faf7f2] text-black hover:bg-neon-purple hover:shadow-[2px_2px_0px_0px_#000] transition-all rounded-sm cursor-pointer shadow-[1px_1px_0px_0px_rgba(0,0,0,1)]"
                 >
                   {copied ? (
                     <ClipboardCheck className="w-4 h-4 text-black animate-ping-once" />
@@ -133,7 +133,7 @@ export default function OcrExtractor() {
                 <button
                   onClick={handleExportTxt}
                   title="Download as TXT"
-                  className="p-2 border-2 border-black bg-[#faf7f2] text-black hover:bg-[#facc15] hover:shadow-[2px_2px_0px_0px_#000] transition-all rounded-sm cursor-pointer shadow-[1px_1px_0px_0px_rgba(0,0,0,1)]"
+                  className="p-2 border-2 border-black bg-[#faf7f2] text-black hover:bg-neon-purple hover:shadow-[2px_2px_0px_0px_#000] transition-all rounded-sm cursor-pointer shadow-[1px_1px_0px_0px_rgba(0,0,0,1)]"
                 >
                   <Download className="w-4 h-4" />
                 </button>
@@ -157,7 +157,7 @@ export default function OcrExtractor() {
                   setResult(null);
                   setFiles([]);
                 }}
-                className="flex items-center gap-2 px-4 py-2 border-2 border-black bg-[#faf7f2] text-black font-mono text-xs font-bold hover:bg-[#ff3366] transition-all cursor-pointer rounded-sm shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
+                className="flex items-center gap-2 px-4 py-2 border-2 border-black bg-[#faf7f2] text-black font-mono text-xs font-bold hover:bg-neon-pink transition-all cursor-pointer rounded-sm shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
               >
                 <RefreshCw className="w-3.5 h-3.5" />
                 <span>PROCESS ANOTHER FILE</span>

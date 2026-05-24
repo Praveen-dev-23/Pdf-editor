@@ -101,7 +101,7 @@ export default function PdfToImage() {
                     className={`
                       flex-1 px-3 py-2 border-2 border-black text-xs font-mono font-black tracking-wider cursor-pointer transition-all flex flex-col items-center justify-center text-center gap-1 min-h-[60px]
                       ${format === opt.id 
-                        ? "bg-[#38bdf8] text-black shadow-[2.5px_2.5px_0px_0px_#000]" 
+                        ? "bg-neon-cyan text-black shadow-[2.5px_2.5px_0px_0px_#000]" 
                         : "bg-white text-black shadow-[2px_2px_0px_0px_#000] hover:bg-black/5"
                       }
                     `}
@@ -117,14 +117,14 @@ export default function PdfToImage() {
           {files.length > 0 && (
             <button
               onClick={handleConvert}
-              className="w-full flex items-center justify-center gap-2 px-6 py-3 border-2 border-black bg-black text-white text-sm font-sans font-black tracking-wider hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[4px_4px_0px_0px_#38bdf8] active:translate-x-[2px] active:translate-y-[2px] transition-all cursor-pointer shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
+              className="w-full flex items-center justify-center gap-2 px-6 py-3 border-2 border-black bg-black text-white text-sm font-sans font-black tracking-wider hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[4px_4px_0px_0px_var(--color-neon-cyan)] active:translate-x-[2px] active:translate-y-[2px] transition-all cursor-pointer shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
             >
               <span>RUN CONVERSION TO IMAGES</span>
             </button>
           )}
 
           {error && (
-            <div className="border-2 border-black bg-[#ff3366] text-black p-3 font-mono text-xs font-bold rounded-xs shadow-[2px_2px_0px_0px_#000]">
+            <div className="border-2 border-black bg-neon-pink text-black p-3 font-mono text-xs font-bold rounded-xs shadow-[2px_2px_0px_0px_#000]">
               [CRITICAL ERROR]: {error}
             </div>
           )}
@@ -132,7 +132,7 @@ export default function PdfToImage() {
       ) : (
         <div className="border-2 border-black bg-white rounded-md p-6 text-center space-y-6 brutal-shadow-black max-w-md mx-auto animate-[fadeIn_0.3s_ease-out]">
           <div className="flex justify-center">
-            <div className="relative p-4 bg-[#38bdf8]/10 border-2 border-black rounded-md shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]">
+            <div className="relative p-4 bg-neon-cyan/10 border-2 border-black rounded-md shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]">
               <Images className="w-12 h-12 text-black" />
               <div className="absolute top-1.5 right-1.5 w-2.5 h-2.5 bg-black rounded-full animate-ping" />
             </div>
@@ -150,7 +150,7 @@ export default function PdfToImage() {
           <div className="flex flex-col gap-2">
             <button
               onClick={handleDownload}
-              className="w-full flex items-center justify-center gap-2 px-6 py-3 border-2 border-black bg-[#38bdf8] text-black font-sans font-black tracking-wider hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[4px_4px_0px_0px_#000] active:translate-x-[2px] active:translate-y-[2px] transition-all cursor-pointer shadow-[2px_2px_0px_0px_#000]"
+              className="w-full flex items-center justify-center gap-2 px-6 py-3 border-2 border-black bg-neon-cyan text-black font-sans font-black tracking-wider hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[4px_4px_0px_0px_#000] active:translate-x-[2px] active:translate-y-[2px] transition-all cursor-pointer shadow-[2px_2px_0px_0px_#000]"
             >
               <Download className="w-4 h-4" />
               <span>DOWNLOAD ZIP BUNDLE</span>
@@ -161,7 +161,7 @@ export default function PdfToImage() {
                 setResult(null);
                 setFiles([]);
               }}
-              className="w-full flex items-center justify-center gap-2 px-6 py-2 border-2 border-black bg-[#faf7f2] text-black font-mono text-xs font-bold hover:bg-[#ff3366] transition-all cursor-pointer shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
+              className="w-full flex items-center justify-center gap-2 px-6 py-2 border-2 border-black bg-[#faf7f2] text-black font-mono text-xs font-bold hover:bg-neon-pink transition-all cursor-pointer shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
             >
               <RefreshCw className="w-3.5 h-3.5" />
               <span>CONVERT ANOTHER PDF</span>

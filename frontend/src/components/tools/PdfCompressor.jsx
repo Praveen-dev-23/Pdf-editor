@@ -103,7 +103,7 @@ export default function PdfCompressor() {
                     className={`
                       px-3 py-2 border-2 border-black text-xs font-mono font-black tracking-wider cursor-pointer transition-all flex flex-col items-center justify-center text-center gap-1 min-h-[70px]
                       ${level === opt.id 
-                        ? "bg-[#facc15] text-black shadow-[2.5px_2.5px_0px_0px_#000]" 
+                        ? "bg-neon-purple text-black shadow-[2.5px_2.5px_0px_0px_#000]" 
                         : "bg-white text-black shadow-[2px_2px_0px_0px_#000] hover:bg-black/5"
                       }
                     `}
@@ -119,14 +119,14 @@ export default function PdfCompressor() {
           {files.length > 0 && (
             <button
               onClick={handleCompress}
-              className="w-full flex items-center justify-center gap-2 px-6 py-3 border-2 border-black bg-black text-white text-sm font-sans font-black tracking-wider hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[4px_4px_0px_0px_#facc15] active:translate-x-[2px] active:translate-y-[2px] transition-all cursor-pointer shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
+              className="w-full flex items-center justify-center gap-2 px-6 py-3 border-2 border-black bg-black text-white text-sm font-sans font-black tracking-wider hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[4px_4px_0px_0px_var(--color-neon-purple)] active:translate-x-[2px] active:translate-y-[2px] transition-all cursor-pointer shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
             >
               <span>RUN COMPRESSION ALGORITHM</span>
             </button>
           )}
 
           {error && (
-            <div className="border-2 border-black bg-[#ff3366] text-black p-3 font-mono text-xs font-bold rounded-xs shadow-[2px_2px_0px_0px_#000]">
+            <div className="border-2 border-black bg-neon-pink text-black p-3 font-mono text-xs font-bold rounded-xs shadow-[2px_2px_0px_0px_#000]">
               [CRITICAL ERROR]: {error}
             </div>
           )}
@@ -134,7 +134,7 @@ export default function PdfCompressor() {
       ) : (
         <div className="border-2 border-black bg-white rounded-md p-6 text-center space-y-6 brutal-shadow-black max-w-md mx-auto animate-[fadeIn_0.3s_ease-out]">
           <div className="flex justify-center">
-            <div className="relative p-4 bg-[#facc15]/10 border-2 border-black rounded-md shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]">
+            <div className="relative p-4 bg-neon-purple/10 border-2 border-black rounded-md shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]">
               <Scale className="w-12 h-12 text-black" />
               <div className="absolute top-1.5 right-1.5 w-2.5 h-2.5 bg-black rounded-full animate-ping" />
             </div>
@@ -153,11 +153,11 @@ export default function PdfCompressor() {
               </div>
               <div className="flex justify-between">
                 <span className="text-black/60 font-bold">COMPRESSED SIZE:</span>
-                <span className="text-black font-black bg-[#38bdf8] px-1 border border-black">{formatSize(result.compressed_size)}</span>
+                <span className="text-black font-black bg-neon-cyan px-1 border border-black">{formatSize(result.compressed_size)}</span>
               </div>
               <div className="flex justify-between pt-2 border-t-2 border-black font-bold">
                 <span className="text-black/60 font-bold">BYTES DELETED:</span>
-                <span className="text-black font-black bg-[#22c55e] px-1 border border-black">
+                <span className="text-black font-black bg-neon-green px-1 border border-black">
                   {formatSize(result.original_size - result.compressed_size)} ({result.ratio}%)
                 </span>
               </div>
@@ -167,7 +167,7 @@ export default function PdfCompressor() {
           <div className="flex flex-col gap-2">
             <button
               onClick={handleDownload}
-              className="w-full flex items-center justify-center gap-2 px-6 py-3 border-2 border-black bg-[#facc15] text-black font-sans font-black tracking-wider hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[4px_4px_0px_0px_#000] active:translate-x-[2px] active:translate-y-[2px] transition-all cursor-pointer shadow-[2px_2px_0px_0px_#000]"
+              className="w-full flex items-center justify-center gap-2 px-6 py-3 border-2 border-black bg-neon-purple text-black font-sans font-black tracking-wider hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[4px_4px_0px_0px_#000] active:translate-x-[2px] active:translate-y-[2px] transition-all cursor-pointer shadow-[2px_2px_0px_0px_#000]"
             >
               <Download className="w-4 h-4" />
               <span>DOWNLOAD COMPRESSED</span>
@@ -178,7 +178,7 @@ export default function PdfCompressor() {
                 setResult(null);
                 setFiles([]);
               }}
-              className="w-full flex items-center justify-center gap-2 px-6 py-2 border-2 border-black bg-[#faf7f2] text-black font-mono text-xs font-bold hover:bg-[#ff3366] transition-all cursor-pointer shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
+              className="w-full flex items-center justify-center gap-2 px-6 py-2 border-2 border-black bg-[#faf7f2] text-black font-mono text-xs font-bold hover:bg-neon-pink transition-all cursor-pointer shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
             >
               <RefreshCw className="w-3.5 h-3.5" />
               <span>COMPRESS ANOTHER</span>

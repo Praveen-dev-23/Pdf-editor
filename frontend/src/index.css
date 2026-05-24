@@ -2,10 +2,10 @@
 @import "tailwindcss";
 
 @theme {
-  --color-neon-cyan: #38bdf8;       /* vibrant sky blue */
-  --color-neon-pink: #ff3366;       /* vibrant hot pink */
-  --color-neon-purple: #facc15;     /* bright yellow */
-  --color-neon-green: #22c55e;      /* vibrant emerald green */
+  --color-neon-cyan: #bae6fd;       /* subtle pastel sky blue */
+  --color-neon-pink: #fbcfe8;       /* subtle pastel pink */
+  --color-neon-purple: #fef08a;     /* subtle pastel yellow */
+  --color-neon-green: #bbf7d0;      /* subtle pastel emerald green */
   --color-cyber-dark: #faf9f5;      /* warm cream bg */
   --color-cyber-card: #ffffff;      /* white card bg */
   --color-cyber-panel: #ffffff;     /* white panel bg */
@@ -40,7 +40,7 @@
     border: 2px solid #faf9f5;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #38bdf8;
+    background: var(--color-neon-cyan);
   }
 }
 

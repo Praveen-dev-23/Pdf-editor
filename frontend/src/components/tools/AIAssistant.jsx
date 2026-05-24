@@ -145,14 +145,14 @@ export default function AIAssistant() {
           {files.length > 0 && (
             <button
               onClick={handleSummarize}
-              className="w-full flex items-center justify-center gap-2 px-6 py-3 border-2 border-black bg-black text-white text-sm font-sans font-black tracking-wider hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[4px_4px_0px_0px_#facc15] active:translate-x-[2px] active:translate-y-[2px] transition-all cursor-pointer shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
+              className="w-full flex items-center justify-center gap-2 px-6 py-3 border-2 border-black bg-black text-white text-sm font-sans font-black tracking-wider hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[4px_4px_0px_0px_var(--color-neon-purple)] active:translate-x-[2px] active:translate-y-[2px] transition-all cursor-pointer shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
             >
               <span>EXECUTE NEURAL ANALYZER</span>
             </button>
           )}
 
           {error && (
-            <div className="border-2 border-black bg-[#ff3366] text-black p-3 font-mono text-xs font-bold rounded-xs shadow-[2px_2px_0px_0px_#000] animate-[fadeIn_0.2s_ease-out]">
+            <div className="border-2 border-black bg-neon-pink text-black p-3 font-mono text-xs font-bold rounded-xs shadow-[2px_2px_0px_0px_#000] animate-[fadeIn_0.2s_ease-out]">
               [CRITICAL ERROR]: {error}
             </div>
           )}
@@ -167,7 +167,7 @@ export default function AIAssistant() {
                 <h4 className="font-sans font-black text-black tracking-tight text-sm truncate max-w-[200px]">
                   {summaryData.filename}
                 </h4>
-                <span className="font-mono text-[9px] text-black bg-[#facc15] border border-black px-1.5 py-0.5 font-black tracking-widest uppercase">
+                <span className="font-mono text-[9px] text-black bg-neon-purple border border-black px-1.5 py-0.5 font-black tracking-widest uppercase">
                   NEURAL SCAN COMPLETED
                 </span>
               </div>
@@ -177,7 +177,7 @@ export default function AIAssistant() {
                   setFiles([]);
                   setMessages([]);
                 }}
-                className="p-1.5 border-2 border-black bg-[#faf7f2] text-black hover:bg-[#ff3366] hover:shadow-[2px_2px_0px_0px_#000] transition-all cursor-pointer rounded-sm shadow-[1.5px_1.5px_0px_0px_rgba(0,0,0,1)]"
+                className="p-1.5 border-2 border-black bg-[#faf7f2] text-black hover:bg-neon-pink hover:shadow-[2px_2px_0px_0px_#000] transition-all cursor-pointer rounded-sm shadow-[1.5px_1.5px_0px_0px_rgba(0,0,0,1)]"
                 title="Analyze another file"
               >
                 <RefreshCw className="w-3.5 h-3.5" />
@@ -196,7 +196,7 @@ export default function AIAssistant() {
               </div>
               <div className="text-center flex flex-col items-center justify-center">
                 <span className="block text-[8px] font-mono text-black/60 font-bold uppercase">Sentiment</span>
-                <span className="text-[9px] font-mono font-black text-black bg-[#facc15] border border-black px-1 py-0.5 rounded-xs truncate block max-w-full">
+                <span className="text-[9px] font-mono font-black text-black bg-neon-purple border border-black px-1 py-0.5 rounded-xs truncate block max-w-full">
                   {summaryData.summary.sentiment}
                 </span>
               </div>
@@ -221,7 +221,7 @@ export default function AIAssistant() {
                 {summaryData.summary.topics.map((t, idx) => (
                   <span
                     key={idx}
-                    className="text-[9px] font-mono font-black tracking-widest px-2.5 py-1 border-2 border-black bg-[#facc15] text-black rounded-sm shadow-[1.5px_1.5px_0px_0px_rgba(0,0,0,1)]"
+                    className="text-[9px] font-mono font-black tracking-widest px-2.5 py-1 border-2 border-black bg-neon-purple text-black rounded-sm shadow-[1.5px_1.5px_0px_0px_rgba(0,0,0,1)]"
                   >
                     #{t}
                   </span>
@@ -270,9 +270,9 @@ export default function AIAssistant() {
                   <div
                     className={`p-3 text-xs font-mono rounded-sm leading-relaxed ${
                       m.sender === "user"
-                        ? "bg-[#38bdf8] text-black border-2 border-black shadow-[2px_2px_0px_0px_#000]"
+                        ? "bg-neon-cyan text-black border-2 border-black shadow-[2px_2px_0px_0px_#000]"
                         : m.sender === "system"
-                        ? "bg-[#ff3366] text-black border-2 border-black shadow-[2px_2px_0px_0px_#000]"
+                        ? "bg-neon-pink text-black border-2 border-black shadow-[2px_2px_0px_0px_#000]"
                         : "bg-white text-black border-2 border-black shadow-[2px_2px_0px_0px_#000]"
                     }`}
                   >
@@ -325,7 +325,7 @@ export default function AIAssistant() {
               <button
                 type="submit"
                 disabled={chatLoading || !query.trim()}
-                className={`px-4 flex items-center justify-center border-2 border-black bg-black text-white hover:bg-[#facc15] hover:text-black transition-all rounded-sm cursor-pointer ${
+                className={`px-4 flex items-center justify-center border-2 border-black bg-black text-white hover:bg-neon-purple hover:text-black transition-all rounded-sm cursor-pointer ${
                   chatLoading || !query.trim() ? "opacity-50 cursor-not-allowed" : ""
                 }`}
               >

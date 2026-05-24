@@ -262,7 +262,7 @@ export default function ESigner() {
                     <button
                       type="button"
                       onClick={clearCanvas}
-                      className="w-full py-1.5 border-2 border-black bg-[#faf7f2] text-black font-mono text-[10px] hover:bg-[#ff3366] transition-all cursor-pointer rounded-sm shadow-[1.5px_1.5px_0px_0px_#000]"
+                      className="w-full py-1.5 border-2 border-black bg-[#faf7f2] text-black font-mono text-[10px] hover:bg-neon-pink transition-all cursor-pointer rounded-sm shadow-[1.5px_1.5px_0px_0px_#000]"
                     >
                       CLEAR CANVAS
                     </button>
@@ -449,7 +449,7 @@ export default function ESigner() {
               disabled={!sigImage}
               className={`w-full flex items-center justify-center gap-2 px-6 py-3 border-2 border-black font-sans font-black tracking-wider transition-all cursor-pointer ${
                 sigImage
-                  ? "bg-black text-white hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[4px_4px_0px_0px_#facc15] active:translate-x-[2px] active:translate-y-[2px]"
+                  ? "bg-black text-white hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[4px_4px_0px_0px_var(--color-neon-purple)] active:translate-x-[2px] active:translate-y-[2px]"
                   : "bg-black/10 text-black/40 border-black/20 cursor-not-allowed"
               }`}
             >
@@ -458,7 +458,7 @@ export default function ESigner() {
           )}
 
           {error && (
-            <div className="border-2 border-black bg-[#ff3366] text-black p-3 font-mono text-xs font-bold rounded-xs shadow-[2px_2px_0px_0px_#000] animate-[fadeIn_0.2s_ease-out]">
+            <div className="border-2 border-black bg-neon-pink text-black p-3 font-mono text-xs font-bold rounded-xs shadow-[2px_2px_0px_0px_#000] animate-[fadeIn_0.2s_ease-out]">
               [CRITICAL ERROR]: {error}
             </div>
           )}
@@ -485,7 +485,7 @@ export default function ESigner() {
             <button
               type="button"
               onClick={handleDownload}
-              className="w-full flex items-center justify-center gap-2 px-6 py-3 border-2 border-black bg-[#38bdf8] text-black font-sans font-black tracking-wider hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[4px_4px_0px_0px_#000] active:translate-x-[2px] active:translate-y-[2px] transition-all cursor-pointer shadow-[2px_2px_0px_0px_#000]"
+              className="w-full flex items-center justify-center gap-2 px-6 py-3 border-2 border-black bg-neon-cyan text-black font-sans font-black tracking-wider hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[4px_4px_0px_0px_#000] active:translate-x-[2px] active:translate-y-[2px] transition-all cursor-pointer shadow-[2px_2px_0px_0px_#000]"
             >
               <Download className="w-4 h-4" />
               <span>DOWNLOAD SIGNED PDF</span>
@@ -501,7 +501,7 @@ export default function ESigner() {
                 setXPct(60);
                 setYPct(80);
               }}
-              className="w-full flex items-center justify-center gap-2 px-6 py-2 border-2 border-black bg-[#faf7f2] text-black font-mono text-xs hover:bg-[#ff3366] transition-all cursor-pointer shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
+              className="w-full flex items-center justify-center gap-2 px-6 py-2 border-2 border-black bg-[#faf7f2] text-black font-mono text-xs hover:bg-neon-pink transition-all cursor-pointer shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
             >
               <RefreshCw className="w-3.5 h-3.5" />
               <span>SIGN ANOTHER FILE</span>
