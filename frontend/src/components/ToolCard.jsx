@@ -10,14 +10,14 @@ export default function ToolCard({
   shadowColor = "cyan" // Maps to different block background colors
 }) {
   
-  // Resolve card background color block
-  const getBgColor = () => {
+  // Resolve card background hover color block
+  const getHoverBgColor = () => {
     switch (shadowColor) {
-      case "pink": return "bg-neon-pink";   // Vibrant Hot Pink
-      case "green": return "bg-neon-green";  // Vibrant Green
-      case "purple": return "bg-neon-purple"; // Vibrant Yellow
-      case "cyan": return "bg-neon-cyan";   // Vibrant Sky Blue
-      default: return "bg-white";
+      case "pink": return "hover:bg-neon-pink";
+      case "green": return "hover:bg-neon-green";
+      case "purple": return "hover:bg-neon-purple";
+      case "cyan": return "hover:bg-neon-cyan";
+      default: return "hover:bg-white";
     }
   };
 
@@ -29,7 +29,8 @@ export default function ToolCard({
         rounded-md border-2 border-black
         flex flex-col justify-between h-56
         group select-none brutal-shadow-black text-black
-        ${getBgColor()}
+        bg-white transition-all duration-200
+        ${getHoverBgColor()}
       `}
     >
       {/* Header Details */}
